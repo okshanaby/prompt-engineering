@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompt Library</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Prompt Library</h1>
+      <p class="subtitle">Save and manage your AI prompts</p>
+    </header>
+
+    <section class="form-section">
+      <form id="prompt-form">
+        <div class="field">
+          <label for="title">Title</label>
+          <input type="text" id="title" placeholder="e.g. Code Review Assistant" required />
+        </div>
+        <div class="field">
+          <label for="model">Model</label>
+          <input type="text" id="model" placeholder="e.g. claude-sonnet-4-6" maxlength="100" required />
+        </div>
+        <div class="field">
+          <label for="content">Prompt Content</label>
+          <textarea id="content" rows="5" placeholder="Enter your prompt here..." required></textarea>
+        </div>
+        <div class="field field-inline">
+          <label>
+            <input type="checkbox" id="is-code" />
+            Content is code
+          </label>
+        </div>
+        <button type="submit" class="btn-save">Save Prompt</button>
+      </form>
+    </section>
+
+    <section class="library-section">
+      <h2>Saved Prompts</h2>
+      <div id="prompt-cards" class="cards-grid"></div>
+      <p id="empty-state" class="empty-state">No prompts saved yet. Add one above.</p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

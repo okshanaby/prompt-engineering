@@ -65,63 +65,6 @@ Data model to support:
 **YOUR TASK:** Based on the examples above, create a detailed prompt for building a "notes section" feature where users can add, edit, save, and delete notes for each prompt in the library.
 ```
 
-## Output
-
-The model produced the following feature implementation prompt:
-
----
-
-**Notes Section Feature Prompt**
-
-Build a notes section for each prompt card in a prompt library application with the following specifications:
-
-Core Requirements:
-- Collapsible notes panel per prompt card (toggle open/closed)
-- Add new notes with a text input and "Add Note" button
-- Inline editing of existing notes (click note text to edit)
-- Delete individual notes with a confirmation step
-- Note count badge on the toggle button ("Notes (3)")
-
-Implementation Details:
-- Textarea that auto-expands as the user types
-- Timestamp displayed on each note ("Added 2 hours ago" / "Edited just now")
-- Unsaved changes indicator (dot on Save button) when edits are pending
-- Smooth slide-down animation when panel opens
-
-Provide complete HTML, CSS, and JavaScript with:
-1. Semantic HTML using `<details>`/`<summary>` or ARIA-controlled `<div>` for the collapsible panel
-2. CSS slide/fade animations for panel open and note entry/removal
-3. JavaScript with event delegation to handle notes inside dynamically rendered prompt cards
-4. localStorage integration — notes persisted under key `promptNotes_<promptId>`
-
-The system should work with this data structure:
-```js
-const notes = [
-  {
-    id: 'note-001',
-    promptId: 'prompt-001',
-    content: 'Works well for short blog posts, struggles with technical topics.',
-    createdAt: 1700000000000,
-    updatedAt: 1700003600000
-  }
-];
-```
-
-Include:
-- Character limit of 500 per note with a live counter ("320 / 500")
-- Error state when localStorage is unavailable (display inline warning, do not throw)
-- Empty state message when no notes exist yet ("No notes yet — add one above")
-
----
-
-The prompt was then used to implement the notes section in `app.js` and `style.css`:
-- `toggleNotes()` shows/hides the panel per card and updates the badge count
-- `addNote()` creates a new note object, saves to localStorage, and re-renders the list
-- `editNote()` switches a note row into an editable textarea on click, saves on blur or Enter
-- `deleteNote()` shows an inline "Are you sure?" prompt before removal
-- Auto-expanding textarea uses a `input` event listener to match `scrollHeight`
-- Relative timestamps ("2 hours ago") computed with a small `timeAgo()` helper
-
 ## Model
 
 **Claude Sonnet 4.6** (`claude-sonnet-4-6`)
