@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prompt Library</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Prompt Library</h1>
+      <p class="header__subtitle">Save, organize, and reuse your best prompts.</p>
+    </div>
+  </header>
+
+  <main class="container main">
+    <section class="card form-card" aria-labelledby="form-heading">
+      <h2 id="form-heading" class="card__title">New Prompt</h2>
+      <form id="prompt-form" class="form" novalidate>
+        <div class="form__group">
+          <label class="form__label" for="title">Title</label>
+          <input
+            class="form__input"
+            id="title"
+            name="title"
+            type="text"
+            placeholder="e.g. Blog post outline generator"
+            maxlength="120"
+            required
+          />
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="content">Prompt</label>
+          <textarea
+            class="form__input form__textarea"
+            id="content"
+            name="content"
+            rows="6"
+            placeholder="Write your prompt here..."
+            required
+          ></textarea>
+        </div>
+
+        <button class="btn btn--primary" type="submit">Save Prompt</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="list-heading">
+      <div class="list-header">
+        <h2 id="list-heading" class="card__title">Saved Prompts</h2>
+        <span id="count" class="badge">0</span>
+      </div>
+      <div id="prompt-list" class="prompt-list"></div>
+      <p id="empty-state" class="empty-state">No prompts yet. Save your first one above.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
