@@ -1,6 +1,6 @@
 # Practical Prompt Engineering — Notes & Projects
 
-My notes and hands-on projects from the [**Practical Prompt Engineering**](https://frontendmasters.com/courses/prompt-engineering/) course by [Sabrina Goldfarb](https://www.linkedin.com/in/sabrinagoldfarb/) on Frontend Masters.
+My notes and hands-on projects from the [**Practical Prompt Engineering**](https://frontendmasters.com/courses/prompt-engineering/) course by [Sabrina Goldfarb](https://www.linkedin.com/in/sabrinagoldfarb/) (working at GitHub at the time of recording) on Frontend Masters.
 
 It covers how to communicate effectively with large language models — from foundational concepts like temperature and context windows, through core techniques like zero-shot and few-shot prompting, all the way to advanced strategies like Chain of Thought, structured output, and personas.
 
